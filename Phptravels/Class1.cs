@@ -8,6 +8,6 @@ namespace Phptravels
 {
     public class Class1
     {
-        //123
+        //12
     }
 }
