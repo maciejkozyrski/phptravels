@@ -10,10 +10,10 @@ namespace Phptravels
 
         string url = "https://www.phptravels.net/";
 
-        //public By tabHotels = By.XPath("//a[@href='#hotels']");
-        //public By tabFlights = By.XPath("//a[@href='#flights']");
-        //public By tabTours = By.XPath("//a[@href='#tours']");
-        //public By tabCars = By.XPath("//a[@href='#cars']");
+        public By tabHotels = By.XPath("//a[@href='#hotels']");
+        public By tabFlights = By.XPath("//a[@href='#flights']");
+        public By tabTours = By.XPath("//a[@href='#tours']");
+        public By tabCars = By.XPath("//a[@href='#cars']");
 
         //IWebElement searchHotels = driver.FindElement(By.Xpath("//*[text()='Search by Hotel or City Name']"));
 
@@ -28,8 +28,6 @@ namespace Phptravels
         [SetUp]
         public void SetUp()
         {
-            driver = new ChromeDriver();
-            //driver = GetChromeDriver();
             driver.Navigate().GoToUrl(url);
             driver.Manage().Window.Maximize();
         }
@@ -38,6 +36,7 @@ namespace Phptravels
         [TearDown]
         public void TearDown()
         {
+            driver.Close();
             driver.Quit();
         }
 
@@ -45,14 +44,13 @@ namespace Phptravels
         [Test]
         public void Test1WyszukanieOneWay()
         {
-            //driver.FindElement(tabHotels).Click();
+            driver.FindElement(tabHotels).Click();
             //driver.FindElement(searchHotels).Click();
             //searchHotels.SendKeys("Warsaw");
 
-
-            //driver.FindElement(tabFlights).Click();
-            //driver.FindElement(tabTours).Click();
-            //driver.FindElement(tabCars).Click();
+            driver.FindElement(tabFlights).Click();
+            driver.FindElement(tabTours).Click();
+            driver.FindElement(tabCars).Click();
 
 
 
