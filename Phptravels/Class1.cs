@@ -1,9 +1,7 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Threading;
-using OpenQA.Selenium.Support.PageObjects;
+using System;
 
 public class Class1
 {
@@ -12,19 +10,22 @@ public class Class1
 
   
     //selectors
-    public By tabHotels = By.XPath("//a[@href='#hotels']");
-    public By tabFlights = By.XPath("//a[@href='#flights']");
-    public By tabTours = By.XPath("//a[@href='#tours']");
-    public By tabCars = By.XPath("//a[@href='#cars']");
-    public By wholePage = By.XPath("//*[@class='select2-drop-mask']");
-    public By searchHotel = By.XPath("//*[text()='Search by Hotel or City Name']");
+    public By hotelsTab = By.XPath("//a[@href='#hotels']");
+    public By flightsTab = By.XPath("//a[@href='#flights']");
+    public By toursTab = By.XPath("//a[@href='#tours']");
+    public By carsTab = By.XPath("//a[@href='#cars']");
 
+    public By hotelText = By.XPath("//*[text()='Search by Hotel or City Name']");
+    public By hotelInput = By.CssSelector(".select2-focused");
+    public By hotelLi = By.CssSelector(".select2-result > ul > li");
+    
 
     [SetUp]
     public void SetUp()
     {
         driver.Navigate().GoToUrl(url);
         driver.Manage().Window.Maximize();
+        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
     }
 
 
@@ -39,12 +40,14 @@ public class Class1
     [Test]
     public void TC1()
     {
-        driver.FindElement(tabHotels).Click();
-        driver.FindElement(searchHotel).Click();
-        driver.FindElement(wholePage).Click();
-        driver.FindElement(tabFlights).Click();
-        driver.FindElement(tabTours).Click();
-        driver.FindElement(tabCars).Click();
+        driver.FindElement(hotelsTab).Click();
+        driver.FindElement(hotelText).Click();
+        driver.FindElement(hotelInput).SendKeys("Warsaw");
+        driver.FindElement(hotelLi).Click();
+
+        driver.FindElement(flightsTab).Click();
+        driver.FindElement(toursTab).Click();
+        driver.FindElement(carsTab).Click();
     }
          
 
