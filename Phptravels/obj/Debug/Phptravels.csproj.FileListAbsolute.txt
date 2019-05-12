@@ -15,3 +15,5 @@ C:\Users\HP 820 G3\source\repos\Phptravels\Phptravels\obj\Debug\Phptravels.cspro
 C:\Users\HP 820 G3\source\repos\Phptravels\Phptravels\obj\Debug\Phptravels.csproj.CopyComplete
 C:\Users\HP 820 G3\source\repos\Phptravels\Phptravels\obj\Debug\Phptravels.dll
 C:\Users\HP 820 G3\source\repos\Phptravels\Phptravels\obj\Debug\Phptravels.pdb
+C:\Users\HP 820 G3\source\repos\Phptravels\Phptravels\bin\Debug\SeleniumExtras.PageObjects.dll
+C:\Users\HP 820 G3\source\repos\Phptravels\Phptravels\obj\Debug\Phptravels.csprojAssemblyReference.cache
